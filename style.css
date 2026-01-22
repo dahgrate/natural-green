@@ -800,7 +800,7 @@ transition: all 0.8s ease-out;
 
 .preserve-row:hover{
   background-color:rgb(59, 191, 167);
-  padding:20px;
+  padding:25px;
   border-radius: 20px ;
   background: rgba(59, 191, 167, 0.18); /* glass tint */
   backdrop-filter: blur(14px) saturate(140%);
