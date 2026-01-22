@@ -1,0 +1,890 @@
+/* ---------------- GLOBAL ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* ensures padding doesn't break layout */
+}
+
+html, body {
+  height: 100%; /* needed for 100vh to work properly */
+  font-family: "Averia Gruesa Libre", cursive;
+  background-color: #FFFDE1;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Hero background as img */
+.hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures full coverage without stretching */
+  z-index: 0;
+  animation: kenburns-top-left 20s ease-out infinite;
+}
+
+/* Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+  z-index: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-logo {
+  width: 150px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-family: "Bubbler One", sans-serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.05;
+  color: #fff;
+}
+
+.hero-slogan {
+  font-family: "Bubbler One", sans-serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  margin-top: 1rem;
+  opacity: 0.9;
+  color: #fff;
+}
+
+
+.tracking-in-contract-bck {
+  animation: tracking-in-contract-bck 1s cubic-bezier(0.215,0.610,0.355,1.000) both;
+}
+
+.kenburns-top-left {
+  animation: kenburns-top-left 20s ease-out both;
+}
+
+/* ---------------- WELCOME SECTION ---------------- */
+.welcome-section {
+  width: 100%;
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #FFFDE1;
+}
+
+.welcome-content {
+  max-width: 800px;
+  font-family: "Averia Gruesa Libre", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #000;
+    margin-bottom: 2rem;
+    
+}
+
+
+
+.welcome-illustration img {
+  width: 200px;
+  max-width: 100%;
+  animation: float 6s ease-in-out infinite;
+  
+}
+
+/* ---------------- ABOUT US ---------------- */
+.about-us-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  color: #fff;
+  
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 400px;
+ box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+ opacity: 1;
+  transform: translateY(20px) scale(0.97);
+  transform: translateX(0px) scale(0.97);
+  transition: all 0.8s ease-out;
+  
+}
+
+
+.about-bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  
+  animation: kenburns-top-left 25s ease-out infinite;
+}
+
+.about-content {
+  position: relative;
+  z-index: 1;
+  padding: 100px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-heading {
+  font-family: 'Bubbler One', sans-serif;
+  font-size: clamp(2.5rem,5vw,3.5rem);
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.about-body {
+  font-family: 'Averia Gruesa Libre', sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #fff;
+}
+
+.mission-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+   border-radius: 180px;
+ box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+ opacity: 1;
+  transform: translateY(30px) scale(0.97);
+  transform: translateX(0px) scale(0.97);
+  transition: all 0.8s ease-out;
+  
+}
+
+.mission-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden; /* keep image contained */
+}
+
+.mission-bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* cover entire container without squishing */
+  object-position: center;  /* center the image */
+  animation: kenburns-top-left 20s ease-out infinite;
+}
+
+.mission-heading {
+  position: relative;
+  z-index: 1;
+  font-family: 'Bubbler One', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 4rem;
+  color: #fff;
+  text-align: center;
+}
+
+.mission-boxes {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Individual box styling */
+.mission-box {
+  width: 300px;               /* square-ish box */
+  background-color: #3BC1A8;  /* box color */
+  padding: 2rem;
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Averia Gruesa Libre', cursive;
+  font-size: 1.1rem;
+  line-height: 1;
+  text-align: left;
+  opacity: 0;                 /* initial animation state */
+  transform: translateY(60px) scale(0.97);
+}
+.mission-box:hover{
+  background-color: #85409c;
+}
+
+/* Alternate left/right alignment */
+.mission-box.left {
+  align-self: flex-start;
+}
+
+.mission-box.right {
+  align-self: flex-end;
+}
+
+
+
+/* ---------- DEFINITION SECTION ---------- */
+.environment-definition-section {
+  width: 100%;
+  background-color: #FFFDE1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.environment-heading {
+  font-family: 'Bubbler One', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 2rem;
+  color: black;
+}
+
+.environment-definition {
+  font-family: 'Averia Gruesa Libre', cursive;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: black;
+  max-width: 900px;
+}
+
+/* ---------- CONTENT SECTION ---------- */
+.environment-content-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 2rem;
+  overflow: hidden;
+   border-radius: 180px;
+ box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+ opacity: 1;
+  transform: translateY(20px) scale(0.97);
+  transform: translateX(0px) scale(0.97);
+  transition: all 0.8s ease-out;
+  
+}
+
+.environment-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  animation: kenburns-top-left 20s ease-out infinite;
+}
+
+.environment-boxes {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Individual boxes */
+.environment-box {
+  width: 300px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #85409D; /* semi-transparent to see image */
+  color: #fff;
+  font-family: 'Averia Gruesa Libre', cursive;
+  font-size: 1.1rem;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(60px) scale(0.97);
+}
+
+.environment-box:hover{
+  background-color: rgba(0, 0, 0, 0.6); 
+}
+/* Left / Right Alignment */
+.environment-box.left {
+  align-self: flex-start;
+}
+
+.environment-box.right {
+  align-self: flex-end;
+}
+.environment-definition {
+  font-family: 'Averia Gruesa Libre', cursive;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+
+.environment-illustration img {
+  width: 300px;
+  max-width: 100%;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ---------------- WHY IT MATTERS ---------------- */
+.why-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+   border-radius: 60px;
+ box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+ opacity: 1;
+  transform: translateY(20px) scale(0.97);
+  transform: translateX(0px) scale(0.97);
+  transition: all 0.8s ease-out;
+  
+}
+
+.why-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  animation: kenburns-top-left 20s ease-out infinite;
+}
+
+/* Heading */
+.why-heading {
+  position: relative;
+  z-index: 1;
+  font-family: 'Bubbler One', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 4rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* Boxes container */
+.why-boxes {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Individual box */
+.why-box {
+  max-width: 320px;
+  width: 100%;
+  padding: 1.75rem;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.6); /* dark transparent */
+  color: #fff;
+  font-family: 'Averia Gruesa Libre', cursive;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(60px) scale(0.97);
+}
+.why-box:hover{
+  background-color:#3BC1A8;
+}
+
+
+/* Left / Right alignment */
+.why-box.left {
+  align-self: flex-start;
+}
+
+.why-box.right {
+  align-self: flex-end;
+}
+
+/* ---------------- HARMFUL TO ENVIRONMENT ---------------- */
+.harmful-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  overflow: hidden;
+   background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(0,100,50,0.25)
+  ); /* subtle dark gradient */
+}
+
+.harmful-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+/* Heading */
+.harmful-heading {
+  position: relative;
+  z-index: 1;
+  font-family: 'Bubbler One', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 4rem;
+  color: black;
+  text-align: center;
+}
+
+/* Cards layout */
+.harmful-cards {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Card */
+.harmful-card {
+  background: rgba(59, 193, 168, 0.9); /* much more transparent */
+   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+
+  border-radius: 16px;
+  padding: 1.75rem;
+  color: #fff;
+  font-family: 'Averia Gruesa Libre', cursive;
+
+  opacity: 0;
+  transform: translateY(60px) scale(0.97);
+    position: relative; /* ensure text is above animated image */
+  z-index: 1;
+}
+
+
+/* Card image */
+
+.harmful-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  display:block;
+  animation: pan-top-bottom 8s ease-in-out infinite; /* subtle movement */
+  /* Smooth scale on hover */
+  transition: transform 0.5s ease;
+   cursor: pointer; 
+   
+}
+
+.harmful-card a{
+  display: block;      /* allows proper layout */
+  cursor: pointer;     /* indicates it’s clickable */
+  text-decoration: none; /
+}
+
+.harmful-card img:hover {
+    border-radius: 0px;
+transition: all 0.8s ease-out;
+ width: 101%;
+  height:200px;
+}
+
+/* play button */
+.harmful-card::after {
+  content: "▶";
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translate(-90%, -90%);
+  font-size: 40px;
+  color: white;
+  width: 90px;
+  height: 200px;
+ opacity:0;
+ padding:0;
+ margin:0;
+  transition: opacity 0.3s ease;
+}
+
+/* show on hover */
+.harmful-card:hover::after {
+  opacity: 1;
+
+}
+.harmful-card:hover{
+   background-color: rgba(0, 0, 0, 0.15);
+}
+
+
+/* Card title */
+.harmful-card h3 {
+  font-family: 'Bubbler One', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Card text */
+.harmful-card p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Harmful card 2 */
+/* Card */
+.harmful-card2 {
+  background: rgba(59, 193, 168, 0.9); /* much more transparent */
+   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+
+  border-radius: 16px;
+  padding: 1.75rem;
+  color: #fff;
+  font-family: 'Averia Gruesa Libre', cursive;
+
+  opacity: 1;
+  transform: translateY(60px) scale(0.97);
+    position: relative; /* ensure text is above animated image */
+  z-index: 1;
+}
+
+.harmful-card2:hover{
+   background-color: rgba(0, 0, 0, 0.15);
+}
+/* Card image */
+
+.harmful-card2 img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  display:block;
+  animation: pan-top-bottom 8s ease-in-out infinite; /* subtle movement */
+  /* Smooth scale on hover */
+  transition: transform 0.5s ease;
+   cursor: pointer; 
+}
+
+.harmful-card2 a{
+  display: block;      /* allows proper layout */
+  cursor: pointer;     /* indicates it’s clickable */
+  text-decoration: none; /
+}
+
+.harmful-card2 img:hover {
+border-radius: 0px;
+transition: all 0.8s ease-out;
+ width: 101%;
+  height:200px;
+}
+
+/* play button */
+.harmful-card2::after {
+  content: "▶";
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translate(-90%, -90%);
+  font-size: 40px;
+  color: white;
+  width: 90px;
+  height: 110px;
+ opacity:0;
+ padding:0;
+ margin:0;
+  transition: opacity 0.3s ease;
+  
+}
+
+/* show on hover */
+.harmful-card2:hover::after {
+  opacity: 1;
+}
+
+
+/* Card title */
+.harmful-card2 h3 {
+  font-family: 'Bubbler One', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Card text */
+.harmful-card2 p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* CONTACT */
+
+.contact-footer {
+  background-color: #85409D;
+  color: #fff;
+  padding: 5rem 2rem;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.contact-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contact-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-heading {
+  font-family: 'Bubbler One', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 1.5rem;
+}
+
+.contact-message {
+  font-family: 'Averia Gruesa Libre', cursive;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-icon {
+  font-size: 2rem;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-icon:hover {
+  transform: scale(1.2);
+  color: #e0ffe8; /* subtle highlight on hover */
+}
+
+.contact-illustration img {
+  width: 300px;
+  max-width: 100%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.contact-footer p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.85);
+}
+
+/* -------- PRESERVE SECTION -------- */
+.preserve-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  overflow: hidden;
+}
+
+/* .preserve-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+ 
+  z-index: 0;
+  animation: kenburns-top-left 25s ease-out infinite;
+} */
+
+/* Heading */
+.preserve-heading {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-family: 'Bubbler One', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 5rem;
+  color: black;
+}
+
+/* Rows container */
+.preserve-rows {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+
+
+/* Row */
+.preserve-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.preserve-row:hover{
+  background-color:rgb(59, 191, 167);
+  padding:20px;
+  border-radius: 20px ;
+  background: rgba(59, 191, 167, 0.18); /* glass tint */
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(59, 191, 167, 0.35);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+
+  color: #eafff9;
+}
+
+/* Reverse rows */
+.preserve-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Text */
+.preserve-text {
+  max-width: 500px;
+  color:#000;
+}
+
+.preserve-text h3 {
+  font-family: 'Bubbler One', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.preserve-text p {
+  font-family: 'Averia Gruesa Libre', cursive;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+/* Illustrations */
+.preserve-illus {
+  width: 220px;
+  max-width: 40vw;
+  animation: float 6s ease-in-out infinite;
+}
+
+
+
+
+/* Heading slide-in animation */
+.tracking-in-contract-bck {
+  animation: tracking-in-contract-bck 1s cubic-bezier(0.215,0.610,0.355,1.000) both;
+}
+
+/* ---------- KEYFRAMES ---------- */
+
+@keyframes tracking-in-contract-bck {
+  0% { letter-spacing: 1em; transform: translateZ(400px); opacity: 0; }
+  40% { opacity: 0.6; }
+  100% { transform: translateZ(0); opacity: 1; }
+}
+
+
+
+@keyframes kenburns-top-left {
+  0% { transform: scale(1) translate(0,0); transform-origin: 16% 16%; }
+  100% { transform: scale(1.25) translate(-20px,-15px); transform-origin: top left; }
+}
+/* subtle floating animation for illustration */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+@keyframes pan-top-bottom {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* Floating illustration animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
